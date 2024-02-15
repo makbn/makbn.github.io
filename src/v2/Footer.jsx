@@ -19,9 +19,9 @@ const Footer = () => {
 
 const DesktopFooter = () => (
     <div className="w-full relative rounded-lg shadow z-10">
-            <div className="flex flex-row items-start gap-4 mx-6 py-4">
+            <div className="flex flex-row items-start gap-4 mx-4 py-4">
                 <span className="flex text-sm text-gray-500 dark:text-gray-400"> 
-                    All Rights Reserved by {PROPERTIES.first_name} {PROPERTIES.last_name} | 2018 - {new Date().getFullYear()}
+                    Developed with <FontAwesomeIcon className="mx-1 mt-1 text-sm text-red-800" icon={faHeart} /> by {PROPERTIES.first_name} {PROPERTIES.last_name} | 2018 - {new Date().getFullYear()}
                 </span>
                 <ul className="grow flex gap-4 justify-end mt-3 text-sm font-medium text-gray-500 dark:text-gray-400">
                     <li>

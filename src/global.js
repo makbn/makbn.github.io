@@ -1,5 +1,7 @@
+import { faInstagram, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
 
-export const properties = {
+export const PROPERTIES = {
     first_name: "Mehdi",
     last_name: "Akbarian",
     nick_name: "Matt A.",
@@ -20,4 +22,16 @@ export const properties = {
     ]
 };
 
-export default properties
+export const HEADER_ITEMS = [
+    {title: "Blog", url: PROPERTIES.url_blog, icon: faBlog},
+    {title: "Portfolio", url: PROPERTIES.url_portfolio, icon: faInstagram},
+    {title: "Github", url: PROPERTIES.url_github, icon: faGithub},
+  ];
+
+export const FOOTER_ITEMS = [
+    {title: "LinkedIn", url: PROPERTIES.url_linkedin, icon: faLinkedin},
+    {title: "Portfolio", url: PROPERTIES.url_portfolio, icon: faInstagram},
+    {title: "Github", url: PROPERTIES.url_github, icon: faGithub},
+  ];
+
+export default PROPERTIES

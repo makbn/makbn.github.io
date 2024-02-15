@@ -2,17 +2,11 @@ import React from "react";
 import { useState } from "react";
 import {User, Navbar, NavbarBrand, NavbarMenu, NavbarContent, NavbarMenuToggle, NavbarItem, Tooltip, Link, Button} from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBlog, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { PropTypes } from 'prop-types'
-import { properties } from "../global";
+import { PROPERTIES, HEADER_ITEMS } from "../global";
 import DeviceViewToggle from "../helper/DeviceViewToggle";
-
-const MENU_ITEMS = [
-  {title: "Blog", url: properties.url_blog, icon: faBlog},
-  {title: "Portfolio", url: properties.url_portfolio, icon: faInstagram},
-  {title: "Github", url: properties.url_github, icon: faGithub},
-];
 
 
 const Header = () => {
@@ -28,7 +22,7 @@ const DesktopNavbar = () => (
     <Logo abbrv={false}/>
   </NavbarBrand>
   <NavbarContent className="sm:flex gap-10" justify="end">
-    {MENU_ITEMS.map((item, idx) => <CustomNavbarItem key={`nav_item_${idx}`} title={item.title} icon={item.icon} href={item.url}/>)}
+    {HEADER_ITEMS.map((item, idx) => <CustomNavbarItem key={`nav_item_${idx}`} title={item.title} icon={item.icon} href={item.url}/>)}
     <PrimaryAction/>
   </NavbarContent>
 </Navbar>
@@ -50,7 +44,7 @@ const MobileNavbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        {MENU_ITEMS.map((item, idx) => <CustomNavbarItem key={`nav_item_${idx}`} title={item.title} icon={item.icon} href={item.url}/> )}
+        {HEADER_ITEMS.map((item, idx) => <CustomNavbarItem key={`nav_item_${idx}`} title={item.title} icon={item.icon} href={item.url} mobile={true}/> )}
         <div className="flex flex-col h-full">
           <div className="flex grow"></div>
           <Link className="flex-1 justify-center" color="foreground" onClick={() => setIsMenuOpen(false)}> <FontAwesomeIcon icon={faChevronUp}/></Link>
@@ -61,20 +55,24 @@ const MobileNavbar = () => {
   )
 }
 
-const CustomNavbarItem = ({title, icon, href}) => {
+const CustomNavbarItem = ({title, icon, href, mobile=false}) => {
   CustomNavbarItem.propTypes = {
     title : PropTypes.string.isRequired,
     icon : PropTypes.any.isRequired,
-    href: PropTypes.string.isRequired
+    href: PropTypes.string.isRequired,
+    mobile: PropTypes.bool
   };
 
+  const width =mobile ? "w-full" : "";
+  const itemStyle = mobile ? "w-full flex flex-row gap-4 px-2 py-1 border-b border-divider": "";
+  
   return (
-    <NavbarItem className="w-full">
-      <Tooltip className="w-full" content={title} placement="bottom">
-        <Link className="w-full" color="foreground" href={href} target="_blank" size="lg">
-          <div className="w-full flex flex-row gap-4 px-2 py-1 border-b border-divider">
+    <NavbarItem className={width}>
+      <Tooltip className={width} content={title} placement="bottom">
+        <Link className={width} color="foreground" href={href} target="_blank" size="lg">
+          <div className={itemStyle}>
             <FontAwesomeIcon icon={icon} />
-            <p>{title}</p>
+            {mobile ? <p>{title}</p> : <></>}
           </div>
         </Link>
       </Tooltip>
@@ -85,7 +83,7 @@ const CustomNavbarItem = ({title, icon, href}) => {
 const PrimaryAction = () => (
   <NavbarItem>
     <Tooltip content="Let's connect!">
-      <Button as={Link} color="primary" href={properties.url_linkedin} variant="flat" target="_blank">
+      <Button as={Link} color="primary" href={PROPERTIES.url_linkedin} variant="flat" target="_blank">
         <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
       </Button>
     </Tooltip>
@@ -99,9 +97,9 @@ const Logo = ({abbrv}) => {
 
   return (
     <User className="font-bold"   
-      name={properties.nick_name}
-      description={abbrv ? properties.occupation_abbrv : properties.occupation}
-      avatarProps={{src: properties.url_avatar}}
+      name={PROPERTIES.nick_name}
+      description={abbrv ? PROPERTIES.occupation_abbrv : PROPERTIES.occupation}
+      avatarProps={{src: PROPERTIES.url_avatar}}
     />
   )
 }

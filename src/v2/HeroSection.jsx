@@ -5,9 +5,8 @@ import { InfoSection } from "./subview/InfoSection";
 import { DeviceViewToggle } from "../helper/DeviceViewToggle";
 
 export const HeroSection = () => {
-
     return (
-        <DeviceViewToggle desktopView={<DesktopHeroSection leftPanel={<NameSection/>} rightPanel={<InfoSection/>} />} mobileView={<MobileHeroSection/>}/>
+        <DeviceViewToggle desktopView={<DesktopHeroSection leftPanel={<NameSection className={"mt-8"}/>} rightPanel={<InfoSection/>} />} mobileView={<MobileHeroSection/>}/>
     );
 }
 
@@ -35,9 +34,9 @@ const DesktopHeroSection = ({leftPanel, rightPanel}) => {
 
 const MobileHeroSection = () => {
     return (
-            <div className="w-full flex flex-col grow relative gap-2 px-2 mt-3">
-
-            </div>
+        <div className="w-full flex flex-col grow relative gap-2 px-2">
+            <NameSection/>
+        </div>
     );
 }
 

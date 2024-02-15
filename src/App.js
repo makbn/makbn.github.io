@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import MainPage from './v2/MainPage';
+import { Application } from '@splinetool/runtime';
+import { MOBILE_DEVICE_WIIDTH } from './helper/DeviceViewToggle';
 
 function App() {
+  useEffect(() => {
+    if (window.innerWidth > MOBILE_DEVICE_WIIDTH) {
+      enableCanvas3d()
+    } 
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainPage/>
   );
 }
+
+const enableCanvas3d = () => {
+  const canvas = document.getElementById('canvas3d');
+  const app = new Application(canvas);
+  app.load('https://prod.spline.design/u7rmwNQAMJplkoy6/scene.splinecode');
+};
 
 export default App;

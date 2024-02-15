@@ -1,13 +1,43 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+      src: url("../public/fonts/Editor\'sNote-Medium.ttf");
+      font-family: "Editor";
+      font-weight: normal;
+      font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  src: url("../public/fonts/Editor\'sNote-MediumItalic.ttf");
+  font-family: "Editor";
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  src: url("../public/fonts/Editor\'sNote-Extralight.ttf");
+  font-family: "Editor";
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+src: url("../public/fonts/Editor\'sNote-ExtralightItalic.ttf");
+font-family: "Editor";
+font-weight: lighter;
+font-style: italic;
+}
+
+@layer base {
+   #name_section{
+    font-family: "Editor";
+    font-style: normal;
+    font-weight: lighter;
+  }
+
+  #canvas3d {
+    opacity: 0.4;
+  }
 }

@@ -20,10 +20,10 @@ const Footer = () => {
 const DesktopFooter = () => (
     <div className="w-full relative rounded-lg shadow z-10">
             <div className="flex flex-row items-start gap-4 mx-6 py-4">
-                <span className="flex text-sm text-gray-500 sm:text-center dark:text-gray-400"> 
+                <span className="flex text-sm text-gray-500 dark:text-gray-400"> 
                     All Rights Reserved by {PROPERTIES.first_name} {PROPERTIES.last_name} | 2018 - {new Date().getFullYear()}
                 </span>
-                <ul className="grow flex gap-4 justify-end mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 sm:text-center">
+                <ul className="grow flex gap-4 justify-end mt-3 text-sm font-medium text-gray-500 dark:text-gray-400">
                     <li>
                     <div><FontAwesomeIcon className="mr-2" icon={faMapLocation} /> {PROPERTIES.location}</div>
                     </li>

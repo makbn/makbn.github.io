@@ -25,9 +25,9 @@ const DesktopHeroSection = ({leftPanel, rightPanel}) => {
     };
 
     return (
-        <div className="w-full h-full flex flex-row grow relative gap-4 sm:px-2 md:px-2 px-6 ">
-            <div className="flex-1"> {leftPanel} </div>
-            <div className="flex-1"> {rightPanel} </div>
+        <div className="w-full min-h-full flex flex-row grow items-stretch relative gap-4 sm:px-2 md:px-2 px-6 ">
+            <div className="flex-1 self-stretch" > {leftPanel} </div>
+            <div className="flex-1 self-stretch"> {rightPanel} </div>
         </div>
     );
 }

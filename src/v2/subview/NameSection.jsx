@@ -15,7 +15,7 @@ export const NameSection = ({className}) => {
     };
 
     return(
-        <div className="h-full flex flex-col gap-4">
+        <div className="h-full max-h-full flex flex-col gap-4">
             <div className={className}></div>
             <div id="name_section">
                 <p className="text-8xl grow text-stone-400"> Hey there! <br></br> I&apos;m </p>
@@ -33,7 +33,8 @@ export const NameSection = ({className}) => {
                 
                 <p className="text-8xl grow text-stone-400"> {PROPERTIES.last_name},</p>
             </div>
-            <div id="slogan_section" className="relative border-l-4 border-stone-400 pl-2 font-bold">
+            
+            <div id="slogan_section" className="relative lg:mt-8 md:mt-8 sm:mt-0 border-l-4 border-stone-400 pl-2 font-bold">
                 <p> 
                     A Software Engineer 
                     <br></br> 
@@ -42,11 +43,11 @@ export const NameSection = ({className}) => {
                     With 
                     <br></br> 
                     + {CommonUtil.numberToText(new Date().getFullYear() - PROPERTIES.occupation_start_year)} years of experience; 
-                    <Link className="absolute right-0 bottom-0 font-thin" color="foreground"> 
-                        <>Read More <FontAwesomeIcon className="pl-2 pt-1"icon={faLongArrowRight}/></>
+                    <Link className="ml-6 font-thin" color="foreground"> 
+                        <>READ MORE <FontAwesomeIcon className="pl-2 pt-1"icon={faLongArrowRight}/></>
                     </Link>
                 </p>
-                
+    
             </div>
     
             <div className="mb-8"></div>

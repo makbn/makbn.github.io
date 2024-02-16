@@ -8,7 +8,7 @@ import {NextUIProvider} from "@nextui-org/react";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <NextUIProvider>
-      <div className="w-screen h-screen  sm:p-0 flex items-start justify-center">
+      <div className="w-screen min-h-screen h-full  sm:p-0 flex items-start justify-center">
         <App />
       </div>  
     </NextUIProvider>

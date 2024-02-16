@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { PropTypes } from 'prop-types'
-import { PROPERTIES, HEADER_ITEMS } from "../global";
+import { PROPERTIES, HEADER_ITEMS } from "../Global";
 import DeviceViewToggle from "../helper/DeviceViewToggle";
 
 
@@ -17,7 +17,8 @@ const Header = () => {
 }
 
 const DesktopNavbar = () => (
-  <Navbar shouldHideOnScroll maxWidth="full">
+  <Navbar 
+  shouldHideOnScroll maxWidth="full">
   <NavbarBrand>
     <Logo abbrv={false}/>
   </NavbarBrand>
@@ -96,10 +97,10 @@ const Logo = ({abbrv}) => {
   };
 
   return (
-    <User className="font-bold"   
+    <User id="logo" className="font-bold select-none "   
       name={PROPERTIES.nick_name}
       description={abbrv ? PROPERTIES.occupation_abbrv : PROPERTIES.occupation}
-      avatarProps={{src: PROPERTIES.url_avatar}}
+      avatarProps={{src: process.env.PUBLIC_URL + PROPERTIES.url_avatar}}
     />
   )
 }

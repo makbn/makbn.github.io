@@ -1,4 +1,4 @@
-import MainPage from './v2/MainPage';
+import MainPage from './home/MainPage';
 import React from 'react';
 
 function App() {

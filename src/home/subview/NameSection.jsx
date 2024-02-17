@@ -8,16 +8,16 @@ import { CommonUtil } from "../../helper/CommonUtil";
 import {Link} from "@nextui-org/react";
 import { Typewriter } from 'react-simple-typewriter'
 
-export const NameSection = ({className}) => {
+export const NameSection = ({isMobile}) => {
 
     NameSection.propTypes = {
-        className: PropTypes.string
+        isMobile: PropTypes.bool
     };
-
+    var nameSectionContainerClass = isMobile ? "" : "mt-6"
     return(
         <div className="h-full max-h-full flex flex-col gap-4">
-            <div className={className}></div>
-            <div id="name_section">
+            <div></div>
+            <div id="name_section" className={nameSectionContainerClass}>
                 <p className="text-8xl grow text-stone-400"> Hey there! <br></br> I&apos;m </p>
                 <div className="text-8xl grow text-stone-400">
                 <Typewriter 

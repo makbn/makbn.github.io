@@ -5,8 +5,8 @@ import React from "react";
 
 export const MOBILE_DEVICE_WIIDTH = 640;
 
-export const DeviceViewToggle = ({ mobileView, desktopView}) => {
-    DeviceViewToggle.propTypes = {
+export const ViewTogleComponent = ({ mobileView, desktopView}) => {
+    ViewTogleComponent.propTypes = {
         mobileView : PropTypes.elementType.isRequired,
         desktopView: PropTypes.elementType.isRequired
     };
@@ -30,4 +30,4 @@ export const DeviceViewToggle = ({ mobileView, desktopView}) => {
     return ( width < MOBILE_DEVICE_WIIDTH ?  <>{mobileView}</> : <>{desktopView}</>);
   }
 
-  export default DeviceViewToggle;
+  export default ViewTogleComponent;

@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { PropTypes } from 'prop-types'
-import { PROPERTIES, HEADER_ITEMS } from "../Global";
-import DeviceViewToggle from "../helper/DeviceViewToggle";
+import { PROPERTIES, HEADER_ITEMS } from "../../Global";
+import ViewTogleComponent from "../../component/ViewToggleComponent";
 
 
 const Header = () => {
  
   return (
-    <DeviceViewToggle mobileView={<MobileNavbar/>} desktopView={<DesktopNavbar/>}/>
+    <ViewTogleComponent mobileView={<MobileNavbar/>} desktopView={<DesktopNavbar/>}/>
   );
 }
 

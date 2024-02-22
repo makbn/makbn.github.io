@@ -53,10 +53,10 @@ font-style: italic;
   }
 
   #logo img:hover{
-    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-name: wave-animation;  
+    animation-duration: 2.5s;        
     animation-iteration-count: 1; 
-    transform-origin: 50% 50%;       /* Pivot around the bottom-left palm */
+    transform-origin: 50% 50%; 
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
@@ -65,8 +65,17 @@ font-style: italic;
     -webkit-touch-callout: none;
   }
 
-  .info_card_title {
+  .info_card_title, .experience_year {
     writing-mode: vertical-rl;
     text-orientation: mixed;
+  }
+
+  .vertical-line {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-left: 1px solid rgb(168 162 158);
+    position: relative;
+    height: 80px;
+    left: 50%;
   }
 }

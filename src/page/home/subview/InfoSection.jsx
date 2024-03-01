@@ -9,12 +9,12 @@ import ProjectSection from "./ProjectSection";
 import ContactMeSection from "./ContactMeSection";
 import AcademicSection from "./AcademicSection";
 
-export const InfoSection = ({scrollTo, setScrollTo, className, setDetailPanelContent}) => {
+export const InfoSection = ({scrollTo, setScrollTo, className, showDetailsPanel}) => {
   InfoSection.propTypes = {
     className: PropTypes.string,
     scrollTo: PropTypes.any.isRequired,
     setScrollTo: PropTypes.any.isRequired,
-    setDetailPanelContent: PropTypes.any.isRequired
+    showDetailsPanel: PropTypes.any.isRequired
   };
 
   const infoSectionSnapScrollRef = useRef();
@@ -38,7 +38,7 @@ export const InfoSection = ({scrollTo, setScrollTo, className, setDetailPanelCon
               contentId={item.id} 
               title={item.title} 
               next={idx+1 >= INFO_SECTIONS.length ? null : INFO_SECTIONS[idx+1].title}
-              setDetailPanelContent={setDetailPanelContent}
+              showDetailsPanel={showDetailsPanel}
             />
           )}
       </ScrollShadow>
@@ -46,13 +46,13 @@ export const InfoSection = ({scrollTo, setScrollTo, className, setDetailPanelCon
   )
 };
 
-const InfoCard = ({contentId, title, next, setScrollTo, setDetailPanelContent}) => {
+const InfoCard = ({contentId, title, next, setScrollTo, showDetailsPanel}) => {
   InfoCard.propTypes = {
       contentId: PropTypes.number.isRequired,
       title : PropTypes.string.isRequired,
       next: PropTypes.string.isRequired,
       setScrollTo: PropTypes.any.isRequired,
-      setDetailPanelContent: PropTypes.any.isRequired
+      showDetailsPanel: PropTypes.any.isRequired
   }
 
   return (
@@ -66,20 +66,20 @@ const InfoCard = ({contentId, title, next, setScrollTo, setDetailPanelContent}) 
               onClick={() => setScrollTo(contentId + 1)}>{next}</span>
           </div>
           <div className="relative h-full w-full m-2 overflow-y-scroll">
-              <Content className="h-full w-full m-10" contentId={contentId} setDetailPanelContent={setDetailPanelContent}/>
+              <Content className="h-full w-full m-10" contentId={contentId} showDetailsPanel={showDetailsPanel}/>
           </div>
       </div>
   )
 }
 
 
-export const Content = ({contentId, setDetailPanelContent}) => {
+export const Content = ({contentId, showDetailsPanel}) => {
   Content.propTypes = {
       contentId: PropTypes.number.isRequired,
-      setDetailPanelContent: PropTypes.any.isRequired
+      showDetailsPanel: PropTypes.any.isRequired
   }
 
-  if (setDetailPanelContent == null) {
+  if (showDetailsPanel == null) {
       throw new Error("Detail Content panel hook can't be null");
   }
 
@@ -90,7 +90,7 @@ export const Content = ({contentId, setDetailPanelContent}) => {
         );
       case 1:
         return (
-          <ProjectSection/>
+          <ProjectSection showDetailsPanel={showDetailsPanel}/>
         );
       case 3:
         return (

@@ -5,12 +5,14 @@ import { faLink, faFileCode, faCaretRight } from "@fortawesome/free-solid-svg-ic
 import PropTypes from "prop-types"
 import Project from "../model/Project";
 
-const ProjectComponent = ({project}) => {
+const ProjectComponent = ({project, showDetailsPanel}) => {
 
     ProjectComponent.propTypes = {
-        project: PropTypes.instanceOf(Project).isRequired
+        project: PropTypes.instanceOf(Project).isRequired,
+        showDetailsPanel: PropTypes.any.isRequired
     }
-
+    console.log(showDetailsPanel)
+    
     return(
         <div className="h-full">
             <Card radius="none" shadow="none" className="h-[210px] border-solid border-1 border-stone-600 bg-transparent">
@@ -38,7 +40,7 @@ const ProjectComponent = ({project}) => {
                         <FontAwesomeIcon icon={faFileCode}/>
                     </Button>
                     <div className="grow"></div>
-                    <Button radius="sm" variant="flat" size="sm">Read More!</Button>
+                    <Button radius="sm" variant="flat" size="sm" onClick={() => showDetailsPanel(`Project \\ ${project.name}`, <></>)}>Read More!</Button>
                 </CardFooter>
             </Card>
         </div>

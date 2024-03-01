@@ -38,7 +38,7 @@ const CompanyComponent = ({company}) => {
 
     return (
         <div className="flex flex-row ml-4 mt-2">
-            <Image width={48} height={48} alt={company.name} src={company.icon} className="hover:scale-75 mr-4"/>
+            <Image width={38} height={38} alt={company.name} src={company.icon} className="hover:scale-75 mr-2"/>
             <div  className="flex flex-col ml-4">
                 <div className="text-lg">{company.name}</div>
                 <div className="text-sm text-stone-600">{company.location}</div> 

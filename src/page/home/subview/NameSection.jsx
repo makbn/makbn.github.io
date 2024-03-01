@@ -18,9 +18,9 @@ export const NameSection = ({isMobile, setScrollTo}) => {
     return(
         <div className="h-full max-h-full flex flex-col gap-4">
             <div></div>
-            <div id="name_section" className={nameSectionContainerClass}>
-                <p className="text-8xl grow text-stone-400"> Hey there! <br></br> I&apos;m </p>
-                <div className="text-8xl grow text-stone-400">
+            <div id="name_section" className={`${nameSectionContainerClass}`}>
+                <p className="ease-out text-8xl grow text-stone-400"> Hey there! <br></br> I&apos;m </p>
+                <div className="ease-out text-8xl grow text-stone-400">
                 <Typewriter 
                     words={['Mehdi', 'Matt']}
                     loop={0}
@@ -32,10 +32,11 @@ export const NameSection = ({isMobile, setScrollTo}) => {
                 />
                 </div>
                 
-                <p className="text-8xl grow text-stone-400"> {PROPERTIES.last_name},</p>
+                <p className="ease-out text-8xl grow text-stone-400"> {PROPERTIES.last_name},</p>
             </div>
             
-            <div id="slogan_section" className="relative lg:mt-8 md:mt-8 sm:mt-0 border-l-4 border-stone-400 pl-2 font-bold">
+            <div id="slogan_section" className="ease-out relative lg:mt-8 md:mt-8 sm:mt-0 border-l-4 border-stone-400 pl-2 font-bold
+                lg:font-light lg:text-4xl/[3.2rem]">
                 <p> 
                     A 
                     <br></br> 
@@ -48,7 +49,7 @@ export const NameSection = ({isMobile, setScrollTo}) => {
                     With 
                     <br></br> 
                     + {CommonUtil.numberToText(new Date().getFullYear() - PROPERTIES.occupation_start_year)} years of experience; 
-                    <Link className="ml-6 font-thin" color="foreground" onPress={() => setScrollTo(4)}> 
+                    <Link className="cursor-pointer ml-6 font-thin" color="foreground" onPress={() => setScrollTo(4)}> 
                         <>READ MORE <FontAwesomeIcon className="pl-2 pt-1"icon={faLongArrowRight}/></>
                     </Link>
                 </p>

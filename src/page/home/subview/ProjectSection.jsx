@@ -6,13 +6,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSquareFull } from "@fortawesome/free-solid-svg-icons"
 import PropTypes from "prop-types"
 
-const ProjectSection = ({showDetailsPanel}) => {
+const ProjectSection = ({showDetailsPanel, className}) => {
     ProjectSection.propTypes = {
-        showDetailsPanel: PropTypes.any.isRequired
+        showDetailsPanel: PropTypes.any.isRequired,
+        className: PropTypes.string
     }
 
     return (
-        <div>
+        <div className={className}>
              <div className="flex items-center font-bold text-stone-400 uppercase">
                 <FontAwesomeIcon className="mr-2 justify-self-center" icon={faSquareFull}/>
                 <p className="mb-2 mt-1">PROFESSIONAL PROJECTS</p>

@@ -7,8 +7,8 @@ export const MOBILE_DEVICE_WIIDTH = 640;
 
 export const ViewTogleComponent = ({ mobileView, desktopView}) => {
     ViewTogleComponent.propTypes = {
-        mobileView : PropTypes.elementType.isRequired,
-        desktopView: PropTypes.elementType.isRequired
+        mobileView : PropTypes.any.isRequired,
+        desktopView: PropTypes.any.isRequired
     };
 
     const [width, setWidth] = useState(0)

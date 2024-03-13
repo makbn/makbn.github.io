@@ -2,33 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --stone-color:rgb(168 162 158);
+  --stone-color-800: rgb(41 37 36);
+}
+
 @font-face {
-      src: url("../public/fonts/Editor\'sNote-Medium.ttf");
+      src: url("../public/fonts/editor/Editor\'sNote-Medium.ttf");
       font-family: "Editor";
       font-weight: normal;
       font-style: normal;
 }
 
 @font-face {
-  src: url("../public/fonts/Editor\'sNote-MediumItalic.ttf");
+  src: url("../public/fonts/editor/Editor\'sNote-MediumItalic.ttf");
   font-family: "Editor";
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  src: url("../public/fonts/Editor\'sNote-Extralight.ttf");
+  src: url("../public/fonts/editor/Editor\'sNote-Extralight.ttf");
   font-family: "Editor";
   font-weight: lighter;
   font-style: normal;
 }
 
 @font-face {
-src: url("../public/fonts/Editor\'sNote-ExtralightItalic.ttf");
+src: url("../public/fonts/editor/Editor\'sNote-ExtralightItalic.ttf");
 font-family: "Editor";
 font-weight: lighter;
 font-style: italic;
 }
+
+
+@font-face {
+  src: url("../public/fonts/ppsm/PPSupplyMono-Ultralight.otf");
+  font-family: "PPS";
+  font-weight: lighter;
+  font-style: normal;
+  }
 
 @keyframes wave-animation {
  0%  { transform: rotate( 0.0deg) }
@@ -105,7 +118,7 @@ font-style: italic;
   .vertical-line {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    border-left: 1px solid rgb(168 162 158);
+    border-left: 1px solid var(--stone-color);
     position: relative;
     height: 80px;
     left: 50%;
@@ -129,4 +142,14 @@ font-style: italic;
     animation-delay: 0.35s;
   }
 
+  .tech_section_background {
+    background-image:    url(../public/tech_sec_bg.png);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center 20%;
+  }
+
+  .tech_item {
+    font-family: "PPS";
+  }
 }

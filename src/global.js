@@ -19,13 +19,7 @@ export const PROPERTIES = {
     url_github: "https://github.com/makbn",
     url_linkedin: "https://ca.linkedin.com/in/mehdiakbarian",
     url_blog: "/blog",
-    url_source: "https://github.com/makbn/makbn.github.io",
-    question_samples: [
-        "Mehdi's professional background",
-        "Show me his academic backgroud",
-        "How many years of experience",
-        "Spring boot experinces?"
-    ]
+    url_source: "https://github.com/makbn/makbn.github.io"
 };
 
 export const HEADER_ITEMS = [
@@ -264,13 +258,13 @@ export const PROJECTS = {
         extra: []
       },
       {
-      id: 6,
-      name: "Java Leaflet",
-      short_desc: "Java wrapper for Leaflet Map",
-      desc: "Java Leaflet is a project designed to provide Java developers with an accessible way to incorporate interactive maps into their applications. By leveraging Leaflet.js, it offers a straightforward solution for displaying maps with ease. Whether you're working on a Java web app, Java mobile application, or Java desktop software, Java Leaflet simplifies the process of integrating dynamic map functionality. It aims to be a helpful tool for developers seeking to enhance their projects with map visualizations.",
-      url: "https://makbn.com/java_leaflet/",
-      repo: "https://github.com/makbn/java_leaflet",
-      extra:[]
+        id: 6,
+        name: "Java Leaflet",
+        short_desc: "Java wrapper for Leaflet Map",
+        desc: "Java Leaflet is a project designed to provide Java developers with an accessible way to incorporate interactive maps into their applications. By leveraging Leaflet.js, it offers a straightforward solution for displaying maps with ease. Whether you're working on a Java web app, Java mobile application, or Java desktop software, Java Leaflet simplifies the process of integrating dynamic map functionality. It aims to be a helpful tool for developers seeking to enhance their projects with map visualizations.",
+        url: "https://makbn.com/java_leaflet/",
+        repo: "https://github.com/makbn/java_leaflet",
+        extra:[]
       },
       {
         id: 7,
@@ -278,7 +272,8 @@ export const PROJECTS = {
         short_desc: "Personal webpage with React",
         desc: "This website that you are currently exploring is part of my attempt to learn React and modern front-end developent. I developed this simple project to learn basics of React and use some of the common state-of-the-art libraries and framework in front-end developent.",
         url: "#",
-        repo: "https://github.com/makbn/makbn.github.io"
+        repo: "https://github.com/makbn/makbn.github.io",
+        extra:[]
       },
       {
         id: 8,
@@ -300,5 +295,34 @@ export const PROJECTS = {
       }
   ]
 }
+
+export const TECHNOLOGIES = [
+  {
+    title: "Programming",
+    list: ["Java SE", "Java EE", "JavaScript", "Python", "Kotlin", "SQL", "HTLM"]
+  }, {
+    title: "Tools and Frameworks",
+    list: ["Spring Boot", "Spring Framework", "Hibernate ORM", "Vaadin", "React", "Maven", "JUnit", "Mockito", "Sentry", "Datadog", "NextUI", "Tailwind CSS"]
+  },{
+    title: "Databases",
+    list: ["MySQL", "MariaDB", "MongoDB", "PostgreSQL", "Redis"]
+  }, {
+    title: "Cloud and DevOps",
+    list: ["CI/CD", "Docker", "Google Cloud Platform", "Jenkins", "Apache Mesos", "Apache Marathon", "CircleCI", "GitHub Actions", "Bitbucket"]
+  }, {
+    title: "Architectures",
+    list: ["MVC", "MVP", "Microservices", "Serverless", "Event-Driven", "REST"]
+  }
+]
+
+export const ABOUT_ME = [
+  {
+    "header": "I am Matt, a proud alumnus of the University of Alberta and a software developer at Aimsio.",
+  },
+  {
+    "header" : "Experienced Software Engineer...",
+    "content": "Experienced software engineer with a proven record of leadership in shaping technical teams and delivering enterprise software solutions. Skilled in designing software architecture and developing versatile solutions while adhering to industry best practices and cutting-edge technologies. Possesses a unique ability to bridge the gap between business and technology, consistently translating organizational vision, mission, and customer needs into tangible results. With years of experience, I am dedicated to pushing the boundaries of innovation, delivering solutions that align with organizational goals, and advancing my career in software engineering by contributing my expertise to innovative projects."
+  }
+]
 
 export default PROPERTIES

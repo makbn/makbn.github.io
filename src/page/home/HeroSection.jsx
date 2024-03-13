@@ -63,7 +63,6 @@ const createDetailsPanelView = (breadcrum, content, closeCallback) => {
             </div>) }
         </div>
         <p>{content}</p>
-        <p>{Date.now()}</p>
     </div> : <></>;
 }
 

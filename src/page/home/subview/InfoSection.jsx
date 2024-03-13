@@ -8,11 +8,14 @@ import WorkExperienceSection from "./WorkExperienceSection";
 import ProjectSection from "./ProjectSection";
 import ContactMeSection from "./ContactMeSection";
 import AcademicSection from "./AcademicSection";
+import TechnologiesSection from "./TechnologiesSection";
+import ContentSection from "./ContactSection";
+import { ABOUT_ME } from "../../../Global";
 
 export const InfoSection = ({scrollTo, setScrollTo, className, showDetailsPanel}) => {
   InfoSection.propTypes = {
     className: PropTypes.string,
-    scrollTo: PropTypes.any.isRequired,
+    scrollTo: PropTypes.any,
     setScrollTo: PropTypes.any.isRequired,
     showDetailsPanel: PropTypes.any.isRequired
   };
@@ -23,7 +26,6 @@ export const InfoSection = ({scrollTo, setScrollTo, className, showDetailsPanel}
     if(scrollTo > 0 && scrollTo <= INFO_SECTIONS.length && infoSectionSnapScrollRef.current.children[scrollTo] != undefined) {
       infoSectionSnapScrollRef.current.children[scrollTo].scrollIntoView({ behavior: 'smooth', block: 'start' });
     } 
-    console.log(scrollTo)
     // reset the scroll value to allow re-call this logic 
     setScrollTo(null);
   })
@@ -50,7 +52,7 @@ const InfoCard = ({contentId, title, next, setScrollTo, showDetailsPanel}) => {
   InfoCard.propTypes = {
       contentId: PropTypes.number.isRequired,
       title : PropTypes.string.isRequired,
-      next: PropTypes.string.isRequired,
+      next: PropTypes.string,
       setScrollTo: PropTypes.any.isRequired,
       showDetailsPanel: PropTypes.any.isRequired
   }
@@ -90,12 +92,20 @@ export const Content = ({contentId, showDetailsPanel}) => {
         );
       case 1:
         return (
-          <ProjectSection showDetailsPanel={showDetailsPanel}/>
+          <ProjectSection showDetailsPanel={showDetailsPanel} className={"ml-4"}/>
         );
+      case 2:
+        return(
+          <TechnologiesSection/>
+        )
       case 3:
         return (
           <AcademicSection className="flex flex-col gap-8"/>
         );
+      case 4:
+        return (
+          <ContentSection content={ABOUT_ME}/>
+        )
       case 5:
         return (
           <ContactMeSection/>

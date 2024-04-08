@@ -49,4 +49,4 @@ This project is licensed under the **[**MIT License**](**LICENSE**)**.
 
 ## Contact
 
-If you have any questions or would like to get in touch, feel free to reach out to me at .
+If you have any questions or would like to get in touch, feel free to reach out to me at `mehdi74akbarian@gmail.com`.

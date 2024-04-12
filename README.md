@@ -42,6 +42,9 @@ Deploying a React project to GitHub Pages is a breeze! Here's how you can do it:
   "deploy": "gh-pages -d build"
 }
 ```
+4. Run `npm run deploy` to deploy!
+
+Read more about `React-gh-pages` [here](https://github.com/gitname/react-gh-pages) 
 
 ## License
 

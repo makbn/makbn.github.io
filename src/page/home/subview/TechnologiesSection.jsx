@@ -1,5 +1,5 @@
 import React from "react"
-import { TECHNOLOGIES } from "../../../Global"
+import { TECHNOLOGIES } from "../../../global"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSquareFull } from "@fortawesome/free-solid-svg-icons"
 import PropTypes from 'prop-types';

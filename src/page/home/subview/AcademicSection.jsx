@@ -1,5 +1,5 @@
 import React from "react"
-import { ACADEMIC } from "../../../Global"
+import { ACADEMIC } from "../../../global"
 import ExperienceComponent from "../../../component/ExperienceComponent"
 import PropTypes from 'prop-types'
 

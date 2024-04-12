@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { PropTypes } from 'prop-types'
-import { PROPERTIES, HEADER_ITEMS } from "../../Global";
+import { PROPERTIES, HEADER_ITEMS } from "../../global";
 import ViewTogleComponent from "../../component/ViewToggleComponent";
 
 

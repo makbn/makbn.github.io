@@ -1,5 +1,5 @@
 import React from "react";
-import PROPERTIES from "../../../Global";
+import PROPERTIES from "../../../global";
 import PropTypes from "prop-types"
 import { faJava } from "@fortawesome/free-brands-svg-icons";
 import { faLongArrowRight } from "@fortawesome/free-solid-svg-icons";

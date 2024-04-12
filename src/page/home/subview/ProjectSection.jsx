@@ -1,7 +1,7 @@
 import React from "react"
 import ProjectComponent from "../../../component/ProjectComponent"
 import Project from "../../../model/Project"
-import { PROJECTS } from "../../../Global"
+import { PROJECTS } from "../../../global"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSquareFull } from "@fortawesome/free-solid-svg-icons"
 import PropTypes from "prop-types"

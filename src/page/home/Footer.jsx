@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapLocation } from '@fortawesome/free-solid-svg-icons'
 import { faCanadianMapleLeaf } from "@fortawesome/free-brands-svg-icons";
-import { PROPERTIES, FOOTER_ITEMS } from "../../Global";
+import { PROPERTIES, FOOTER_ITEMS } from "../../global";
 import { Tooltip, Link }  from "@nextui-org/react"
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 

@@ -1,5 +1,5 @@
 import React from "react"
-import { EXPERIENCES } from "../../../Global"
+import { EXPERIENCES } from "../../../global"
 import ExperienceComponent from "../../../component/ExperienceComponent"
 import PropTypes from 'prop-types'
 

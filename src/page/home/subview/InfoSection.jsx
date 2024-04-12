@@ -3,14 +3,14 @@ import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownLong } from "@fortawesome/free-solid-svg-icons";
 import { ScrollShadow } from "@nextui-org/react";
-import { INFO_SECTIONS } from "../../../Global";
+import { INFO_SECTIONS } from "../../../global";
 import WorkExperienceSection from "./WorkExperienceSection";
 import ProjectSection from "./ProjectSection";
 import ContactMeSection from "./ContactMeSection";
 import AcademicSection from "./AcademicSection";
 import TechnologiesSection from "./TechnologiesSection";
 import ContentSection from "./ContactSection";
-import { ABOUT_ME } from "../../../Global";
+import { ABOUT_ME } from "../../../global";
 
 export const InfoSection = ({scrollTo, setScrollTo, className, showDetailsPanel}) => {
   InfoSection.propTypes = {

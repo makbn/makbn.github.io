@@ -6,11 +6,12 @@ import PropTypes from "prop-types"
 import Project from "../model/Project";
 import ContentComponent from "./ContentComponent";
 
-const ProjectComponent = ({project, showDetailsPanel}) => {
+const ProjectComponent = ({project, showDetailsPanel, isMobile}) => {
 
     ProjectComponent.propTypes = {
         project: PropTypes.instanceOf(Project).isRequired,
-        showDetailsPanel: PropTypes.any.isRequired
+        showDetailsPanel: PropTypes.any.isRequired,
+        isMobile: PropTypes.bool.isRequired
     }
 
     const [isVisible, setIsVisible] = useState(false);
@@ -18,28 +19,29 @@ const ProjectComponent = ({project, showDetailsPanel}) => {
 
     return(
         <div className="h-full" onMouseEnter={() => setIsVisible(true)} onMouseLeave={() => setIsVisible(false)}>
-            <Card radius="none" shadow="none" className="h-[210px] border-solid border-1 border-stone-600 bg-transparent">
+            <Card radius="none" shadow="none" className={`${isMobile? "h-[170px]" : "h-[210px]"} border-solid border-1 border-stone-600 bg-transparent`}>
                 <CardHeader className="grow absolute z-10 top-1 flex flex-col items-start gap-2">
-                    <h4 className="cursor-pointer text-white/90 font-thin text-xl uppercase" onClick={onClickAction}>{project.name}</h4>
+                    <h4 className={`cursor-pointer text-white/90 font-thin ${isMobile ? "text-l" : "text-xl"} uppercase`} onClick={onClickAction}>{project.name}</h4>
                     <div className="flex flex-row font-medium text-stone-400 justify-center">
                         <FontAwesomeIcon className="mr-2 justify-self-center" icon={faCaretRight}/>
                         <p className="text-tiny text-white/60 uppercase font-bold">{project.short_desc}</p>
                     </div>
                     <div className="grow"></div>
-                    <p className="ml-4 self-end line-clamp-3 font-thin">{project.desc}</p>
+                    {isMobile ? null : <p className="ml-4 self-end line-clamp-3 font-thin">{project.desc}</p>}
                 </CardHeader>
-               <ProjectActionMenuComponent project={project} isVisible={isVisible} onClickAction={onClickAction}/>
+               <ProjectActionMenuComponent project={project} isVisible={isVisible} isMobile={isMobile} onClickAction={onClickAction}/>
             </Card>
         </div>
     )
 }
 
-const ProjectActionMenuComponent = ({project, isVisible, onClickAction}) => {
+const ProjectActionMenuComponent = ({project, isVisible, isMobile, onClickAction}) => {
 
     ProjectActionMenuComponent.propTypes = {
         project: PropTypes.instanceOf(Project).isRequired,
         isVisible: PropTypes.any.isRequired,
-        onClickAction: PropTypes.any.isRequired
+        onClickAction: PropTypes.any.isRequired,
+        isMobile: PropTypes.bool.isRequired
     }
 
     return(
@@ -60,7 +62,7 @@ const ProjectActionMenuComponent = ({project, isVisible, onClickAction}) => {
             : null}
 
             <div className="grow"></div>
-            <Button radius="sm" variant="flat" size="sm" onClick={onClickAction}>Read More!</Button>
+            {isMobile ? null : <Button radius="sm" variant="flat" size="sm" onClick={onClickAction}>Read More!</Button>}
         </CardFooter>
     )
 }

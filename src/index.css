@@ -152,4 +152,12 @@ font-style: italic;
   .tech_item {
     font-family: "PPS";
   }
+
+  .hide_scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+  }::-webkit-scrollbar { /* WebKit */
+    width: 0px;
+  }
+  
 }

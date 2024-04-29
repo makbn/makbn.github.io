@@ -2,6 +2,8 @@
 
 Welcome to the repository of my personal website, where I showcase my skills, experience, and projects in an interactive and visually appealing way. Built with React, JavaScript, TailwindCSS, and NextUI, this website is a true testament to my passion for web development.
 
+![poster](https://raw.githubusercontent.com/makbn/makbn.github.io/master/docs/poster.png)
+
 Feel free to fork this repository and use the code as a starting point for your own personal website! You can customize the content, design, and features to fit your needs. I'd love to see what you create, so feel free to share your project with me.
 
 ## Features
@@ -42,9 +44,10 @@ Deploying a React project to GitHub Pages is a breeze! Here's how you can do it:
   "deploy": "gh-pages -d build"
 }
 ```
+
 4. Run `npm run deploy` to deploy!
 
-Read more about `React-gh-pages` [here](https://github.com/gitname/react-gh-pages) 
+Read more about `React-gh-pages` [here](https://github.com/gitname/react-gh-pages)
 
 ## License
 
@@ -53,4 +56,3 @@ This project is licensed under the **[**MIT License**](**LICENSE**)**.
 ## Contact
 
 If you have any questions or would like to get in touch, feel free to reach out to me [here](https://www.linkedin.com/in/mehdiakbarian/).
-

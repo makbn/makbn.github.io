@@ -17,7 +17,7 @@ export const NameSection = ({isMobile, setScrollTo, className=""}) => {
     };
     var nameSectionContainerClass = isMobile ? "" : "mt-6"
     return(
-        <div id="name_section_container" className={`${className} h-full max-h-full flex grow flex-col gap-4`}>
+        <div id="name_section_container" className={`${className} ${isMobile ? "h-[calc(100svh-65px)] w-svw" : "h-full max-h-full gap-4"} flex grow flex-col`}>
             <div></div>
             <div id="name_section" className={`${nameSectionContainerClass}`}>
                 <p className={`ease-out ${isMobile ? "text-7xl" : "text-8xl" } grow text-stone-400`}> Hey there! <br></br> I&apos;m </p>
@@ -35,7 +35,7 @@ export const NameSection = ({isMobile, setScrollTo, className=""}) => {
                 
                 <p className={`ease-out ${isMobile ? "text-7xl" : "text-8xl" } grow text-stone-400`}> {PROPERTIES.last_name},</p>
             </div>
-            
+            {isMobile ? <div className="grow"/> : null}
             <div id="slogan_section" className="ease-out relative lg:mt-8 md:mt-8 sm:mt-0 border-l-4 border-stone-400 pl-2 font-bold
                 lg:font-light lg:text-4xl/[3.2rem]">
                 <p> 
@@ -58,8 +58,8 @@ export const NameSection = ({isMobile, setScrollTo, className=""}) => {
                 </p>
     
             </div>
-            {isMobile ?  <div className="cursor-pointer next_info_card_caption grow flex items-center justify-center" onClick={() => setScrollTo(0)}>
-                <FontAwesomeIcon className="justify-end border-1 rounded-2xl cursor-pointer py-4 px-2"icon={faLongArrowDown}/></div> : null}
+            {isMobile ?  <div className="relative"><div className="absolute bottom-0 right-0 cursor-pointer next_info_card_caption">
+                <FontAwesomeIcon className="justify-end cursor-pointer py-4 px-2"icon={faLongArrowDown}/></div></div> : null}
     
             <div className="mb-8"></div>
         </div>

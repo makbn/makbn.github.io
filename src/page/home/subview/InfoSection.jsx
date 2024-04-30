@@ -9,7 +9,7 @@ import ProjectSection from "./ProjectSection";
 import ContactMeSection from "./ContactMeSection";
 import AcademicSection from "./AcademicSection";
 import TechnologiesSection from "./TechnologiesSection";
-import ContentSection from "./ContactSection";
+import ContentSection from "./ContentSection";
 import { ABOUT_ME } from "../../../global";
 import { NameSection } from "./NameSection"
 
@@ -42,7 +42,6 @@ export const InfoSection = ({scrollTo, setScrollTo, className, showDetailsPanel}
               title={item.title} 
               next={idx+1 >= INFO_SECTIONS.length ? null : INFO_SECTIONS[idx+1].title}
               showDetailsPanel={showDetailsPanel}
-              isMobile={false}
             />
           )}
       </ScrollShadow>
@@ -69,26 +68,23 @@ export const MobileInfoSection = ({className, showDetailsPanel}) => {
 
   return (
     <div className={className}>
-      <ScrollShadow id="mobile_info_section_scroll" hideScrollBar radius="sm" ref={infoSectionSnapScrollRef}  className="flex flex-col h-full w-full overflow-y-scroll snap-y snap-mandatory hide_scrollbar">
+      <div id="mobile_info_section_scroll"  ref={infoSectionSnapScrollRef}  className="flex gap-8 flex-col h-full w-screen overflow-y-scroll hide_scrollbar">
           <NameSection className="flex-shrink-0 snap-start snap-always" isMobile={true} setScrollTo={setScrollInfoTo}/>
           {INFO_SECTIONS.map((item, idx) => 
-            <InfoCard 
+            <MobileInfoCard 
               key={`info_card_${idx}`} 
-              setScrollTo={setScrollInfoTo}
               contentId={item.id} 
               title={item.title} 
-              next={idx+1 >= INFO_SECTIONS.length ? null : INFO_SECTIONS[idx+1].title}
               showDetailsPanel={showDetailsPanel}
-              isMobile={true}
             />
           )}
-      </ScrollShadow>
+      </div>
     </div>
   )
 };
 
 
-const InfoCard = ({contentId, title, next, setScrollTo, showDetailsPanel, isMobile}) => {
+const InfoCard = ({contentId, title, next, setScrollTo, showDetailsPanel}) => {
   InfoCard.propTypes = {
       contentId: PropTypes.number.isRequired,
       title : PropTypes.string.isRequired,
@@ -109,7 +105,28 @@ const InfoCard = ({contentId, title, next, setScrollTo, showDetailsPanel, isMobi
               onClick={() => setScrollTo(contentId + 1)}>{next}</span>
           </div>
           <div className="relative h-full w-full m-2 overflow-y-scroll">
-              <Content className="h-full w-full m-10" contentId={contentId} showDetailsPanel={showDetailsPanel} isMobile={isMobile}/>
+              <Content className="h-full w-full m-10" contentId={contentId} showDetailsPanel={showDetailsPanel} isMobile={false}/>
+          </div>
+      </div>
+  )
+}
+
+
+const MobileInfoCard = ({contentId, title, showDetailsPanel}) => {
+  MobileInfoCard.propTypes = {
+      contentId: PropTypes.number.isRequired,
+      title : PropTypes.string.isRequired,
+      next: PropTypes.string,
+      setScrollTo: PropTypes.any.isRequired,
+      showDetailsPanel: PropTypes.any.isRequired,
+      isMobile: PropTypes.bool.isRequired
+  }
+
+  return (
+      <div className="w-svw flex flex-col flex-shrink-0 hide_scrollbar">
+          <span className="w-svw select-none text-center font-bold uppercase text-stone-400 overline mb-4">{title.split("/")[0]}</span>
+          <div className="relative w-svw  overflow-y-scroll overflow-x-clip">
+              <Content className="w-svw" contentId={contentId} showDetailsPanel={showDetailsPanel} isMobile={true}/>
           </div>
       </div>
   )
@@ -121,9 +138,6 @@ export const Content = ({contentId, showDetailsPanel, isMobile}) => {
       contentId: PropTypes.number.isRequired,
       showDetailsPanel: PropTypes.any.isRequired,
       isMobile: PropTypes.bool.isRequired
-  }
-  if (isMobile) {
-    console.log("hi")
   }
 
   if (showDetailsPanel == null) {
@@ -153,7 +167,7 @@ export const Content = ({contentId, showDetailsPanel, isMobile}) => {
         )
       case 5:
         return (
-          <ContactMeSection/>
+          <ContactMeSection isMobile={isMobile}/>
         );
       default:
         return "Hello World!"

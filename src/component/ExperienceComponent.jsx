@@ -13,7 +13,7 @@ const ExperienceComponent = ({experience}) => {
     };
 
     return (
-        <div className="flex flext-col justify-start items-start">
+        <div className="w-full flex flext-col justify-start items-start">
             {/* year start-end section */}
             <div className="h-200 flex flex-row experience_year font-thin uppercase mt-2">
                 <p>{experience.start}</p>
@@ -54,7 +54,7 @@ const SkillComponent = ({skills}) => {
     };
 
     return(
-        <div className="flex flex-row gap-2 ml-4 mt-4">
+        <div className="w-full flex flex-row gap-2 ml-4 mt-4 flex-wrap">
             {skills.map((skill, idx) => <Chip key={`skill_${idx}`} variant="bordered" size="sm" className="text-stone-400">{skill.title}</Chip>)}
         </div>
     )
@@ -81,7 +81,7 @@ const DescriptionConponent = ({description}) => {
         <div className="flex flex-col ml-4 divide-y divide-dashed divide-stone-800 gap-2">
             {description.map((desc, idx)=> 
             <div key={`exp_desc_${idx}`} className="flex flex-row">
-                <FontAwesomeIcon className="ml-6 mr-4 mt-2 text-stone-400" size="2xs" icon={faCircle}/>
+                <FontAwesomeIcon className="sm:ml-0 lg:ml-6 mr-4 mt-2 text-stone-400" size="2xs" icon={faCircle}/>
                 <div className="font-thin text-stone-400" >{desc}</div>
             </div>)}
         </div>

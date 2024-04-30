@@ -33,7 +33,7 @@ const MobileWorkExperienceSection = ({className}) => {
     }
 
     return (
-        <div className={className}>
+        <div className={`${className} w-full`}>
             {EXPERIENCES.map((exp, idx) => <ExperienceComponent key={`experience_component_${idx}`} experience={exp}/>)}
         </div>
     )

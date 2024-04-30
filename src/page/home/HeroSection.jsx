@@ -70,7 +70,7 @@ const createDetailsPanelView = (breadcrum, content, closeCallback) => {
 
 const MobileHeroSection = () => {
     return (
-        <MobileInfoSection id="mobile_info_section" className={`h-full h-min-full w-full duration-300 relative my-8`} 
+        <MobileInfoSection id="mobile_info_section" className={`h-dvh w-full duration-300 relative`} 
         showDetailsPanel={() => {}}/> 
     );
 }

@@ -43,6 +43,16 @@ export const INFO_SECTIONS = [
   {id:5, title:"Contact me"}
 ];
 
+export const MOBILE_INFO_SECTIONS = [
+  {id:0, title:""},
+  {id:1, title:"Work Experience / Professional Background"},
+  {id:2, title:"Projects"},
+  {id:3, title:"Technologies"},
+  {id:4, title:"Academic Background"},
+  {id:5, title:"About me / Summery"},
+  {id:6, title:"Contact me"}
+];
+
 export const EXPERIENCES = [
   new Experience("Software Developer", 
     new Company("Aimsio", "Calgary, AB, Canada", "https://aimsio.com", "logos/aimsio.png"),

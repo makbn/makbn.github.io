@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownLong } from "@fortawesome/free-solid-svg-icons";
 import { ScrollShadow } from "@nextui-org/react";
-import { INFO_SECTIONS } from "../../../global";
+import { INFO_SECTIONS, MOBILE_INFO_SECTIONS } from "../../../global";
 import WorkExperienceSection from "./WorkExperienceSection";
 import ProjectSection from "./ProjectSection";
 import ContactMeSection from "./ContactMeSection";
@@ -55,22 +55,10 @@ export const MobileInfoSection = ({className, showDetailsPanel}) => {
     showDetailsPanel: PropTypes.any.isRequired
   };
 
-  const infoSectionSnapScrollRef = useRef();
-  const [scrollInfoTo, setScrollInfoTo] = useState(0);
-
-  useEffect(() => {
-    if(scrollInfoTo >= 0 && scrollInfoTo <= INFO_SECTIONS.length && infoSectionSnapScrollRef.current.children[scrollInfoTo] != undefined) {
-      infoSectionSnapScrollRef.current.children[scrollInfoTo + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } 
-    // reset the scroll value to allow re-call this logic 
-    setScrollInfoTo(null);
-  })
-
   return (
     <div className={className}>
-      <div id="mobile_info_section_scroll"  ref={infoSectionSnapScrollRef}  className="flex gap-8 flex-col h-full w-screen overflow-y-scroll hide_scrollbar">
-          <NameSection className="flex-shrink-0 snap-start snap-always" isMobile={true} setScrollTo={setScrollInfoTo}/>
-          {INFO_SECTIONS.map((item, idx) => 
+      <div id="mobile_info_section_scroll"  className="flex gap-8 flex-col h-full w-screen overflow-y-scroll hide_scrollbar">
+          {MOBILE_INFO_SECTIONS.map((item, idx) => 
             <MobileInfoCard 
               key={`info_card_${idx}`} 
               contentId={item.id} 
@@ -123,8 +111,10 @@ const MobileInfoCard = ({contentId, title, showDetailsPanel}) => {
   }
 
   return (
-      <div className="w-svw flex flex-col flex-shrink-0 hide_scrollbar">
-          <span className="w-svw select-none text-center font-bold uppercase text-stone-400 overline mb-4">{title.split("/")[0]}</span>
+      <div className=" w-screen w-max-scree overflow-clip w-svw flex flex-col flex-shrink-0 hide_scrollbar">
+          <div className={`w-svw select-none text-center font-extrabold text-lg text-black uppercase banner-wrap ${contentId !=0 ? "mb-12 pt-10" : ""}`}>
+            <div className={`relative  banner ${contentId != 0 ? "after:rotate-[6deg]" : "invisible"}`}><span>{title.split("/")[0]}</span></div>
+          </div>
           <div className="relative w-svw  overflow-y-scroll overflow-x-clip">
               <Content className="w-svw" contentId={contentId} showDetailsPanel={showDetailsPanel} isMobile={true}/>
           </div>
@@ -144,33 +134,23 @@ export const Content = ({contentId, showDetailsPanel, isMobile}) => {
       throw new Error("Detail Content panel hook can't be null");
   }
 
-  switch(contentId) {
-      case 0:
-        return (
-          <WorkExperienceSection className="flex flex-col gap-8" isMobile={isMobile}/>
-        );
-      case 1:
-        return (
-          <ProjectSection showDetailsPanel={showDetailsPanel} className={"ml-4"} isMobile={isMobile}/>
-        );
-      case 2:
-        return(
-          <TechnologiesSection isMobile={isMobile}/>
-        )
-      case 3:
-        return (
-          <AcademicSection className="flex flex-col gap-8"/>
-        );
-      case 4:
-        return (
-          <ContentSection content={ABOUT_ME}/>
-        )
-      case 5:
-        return (
-          <ContactMeSection isMobile={isMobile}/>
-        );
-      default:
-        return "Hello World!"
-  }
+  const componentsMap = isMobile ? {
+    0: <NameSection className="flex-shrink-0 snap-start snap-always" isMobile={true} />,
+    1: <WorkExperienceSection className="flex flex-col gap-8" isMobile={true} />,
+    2: <ProjectSection showDetailsPanel={showDetailsPanel} className="ml-4" isMobile={true} />,
+    3: <TechnologiesSection isMobile={true} />,
+    4: <AcademicSection className="flex flex-col gap-8" />,
+    5: <ContentSection content={ABOUT_ME} />,
+    6: <ContactMeSection isMobile={true} />,
+  } : {
+    0: <WorkExperienceSection className="flex flex-col gap-8" isMobile={false} />,
+    1: <ProjectSection showDetailsPanel={showDetailsPanel} className="ml-4" isMobile={false} />,
+    2: <TechnologiesSection isMobile={false} />,
+    3: <AcademicSection className="flex flex-col gap-8" />,
+    4: <ContentSection content={ABOUT_ME} />,
+    5: <ContactMeSection isMobile={false} />,
+  };
+
+  return componentsMap[contentId] || "Hello World!";
 }
     

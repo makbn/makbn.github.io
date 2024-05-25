@@ -159,5 +159,29 @@ font-style: italic;
   }::-webkit-scrollbar { /* WebKit */
     width: 0px;
   }
+
+
+.banner-wrap {
+    position:relative;
+}
+.banner::after { 
+    content: "";
+    display:block;
+    background: linear-gradient(0deg, black, var(--stone-color));
+    width:200%;
+    height:200px;
+    position:absolute;
+    left:-30%;
+    top:0%;
+    bottom: 50%;
+    z-index:0;
+    overflow-y: hidden;
+    overflow: hidden;
+}
+.banner span {
+  position: relative;
+  padding-top: 3.5rem;
+  z-index: 1;
+}
   
 }

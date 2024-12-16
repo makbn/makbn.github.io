@@ -25,7 +25,7 @@ To run this project locally, follow these simple steps:
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 4. Open your browser and navigate to `http://localhost:3000`
-5. Voilà! You can now explore my website locally 🎉
+5. Voilà! You can now explore the website locally 🎉
 
 ## Deployment
 

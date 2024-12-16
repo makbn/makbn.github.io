@@ -1,5 +1,12 @@
 import { faXTwitter, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faBlog, faUserAstronaut, faHelmetSafety, faUpRightFromSquare, faArchive } from "@fortawesome/free-solid-svg-icons";
+import {
+    faBlog,
+    faUserAstronaut,
+    faHelmetSafety,
+    faUpRightFromSquare,
+    faArchive,
+    faGlobe
+} from "@fortawesome/free-solid-svg-icons";
 import Experience from "./model/Experience";
 import Company from "./model/Company";
 import Skill from "./model/Skill";
@@ -54,9 +61,23 @@ export const MOBILE_INFO_SECTIONS = [
 ];
 
 export const EXPERIENCES = [
+  new Experience("Software Developer",
+      new Company("ICE", "Calgary, AB, Canada", "https://ice.com", "logos/ice.png"),
+      2024, "TDY", [
+        new Skill("Java", 10),
+        new Skill("Hibernate", 8),
+        new Skill("Oracle", 7),
+        new Skill("RabbitMQ", 9),
+        new Skill("REST API", 10),
+        new Skill("Web Developent", 10),
+        new Skill("Mybatis", 7)
+      ], [
+        "Working as a software engineer developing and maintaining ICE natural gas exchange (NGX) platforms",
+        "Upgrading the existing projects using common patterns and the latest LTS frameworks and libraries",
+      ]),
   new Experience("Software Developer", 
     new Company("Aimsio", "Calgary, AB, Canada", "https://aimsio.com", "logos/aimsio.png"),
-    2022, "Present", [
+    2022, 2024, [
         new Skill("Java", 10),
         new Skill("Vaadin", 8),
         new Skill("MySQL", 9),
@@ -145,8 +166,32 @@ export const ACADEMIC = [
 
 export const PROJECTS = {
   professional : [
+      {
+          id: 0,
+          name: "ICE NGX",
+          short_desc: "Field Management SaaS",
+          desc: "ICE NGX provides electronic trading, central counterparty clearing and data services to the North American natural gas, electricity, and environmental markets. ",
+          url: "https://ice.com/ngx",
+          extra: [
+              {
+                  title: "ICE (NYSE: ICE)",
+                  icon: faGlobe,
+                  url: "https://www.ice.com/index"
+              },
+              {
+                  title: "LinkedIn Page",
+                  icon: faLinkedin,
+                  url: "https://ca.linkedin.com/company/icemarkets"
+              },
+              {
+                  title: "X/Twitter Page",
+                  icon: faXTwitter,
+                  url: "https://x.com/ICE_Markets"
+              }
+          ]
+      },
     {
-      id: 0,
+      id: 1,
       name: "Aimsio",
       short_desc: "Field Management SaaS",
       desc: "Aimsio is an all-in-one field management software. Offices use the Aimsio web portal to dispatch crew and equipment, track projects, track HSE and compliance, create invoices, and generate reports. There is also a mobile app for field users to be notified of new jobs, fill out forms and tickets, capture electronic signatures, and more. At Aimsio, I'm responsible for developing different part of the system using Java and Vaadin framework which boraden my tasks from backend to frontend. So far, I work on the different module including Job Order management, WBS Budgeting, Report Access Management, Dynamic Form Builder, JUnit 5 migration, Vaading framework migration, and so many other tasks.",
@@ -176,7 +221,7 @@ export const PROJECTS = {
       ]
     },
     {
-      id: 1,
+      id: 2,
       name: "SAKKU Cloud",
       short_desc: "Private Container Ochestration",
       desc: "SAKKU is a proprietary container orchestration platform developed by the team at Fanap Co. to efficiently manage and deliver both internal and public services. We unified servers across Fanap and Pasargard Bank datasenters using Apache Mesos, and we utilize Docker containers and OpenWhisk to deploy services effectively. SAKKU offers a variety of services, including managed databases, application scaling based on resource usage, blue-green deployment, live application resource and log monitoring, application versioning, on-demand web-based file management, and collaborative development tools. Currently, SAKKU is part of Podium services and supports most Podium projects.",
@@ -202,7 +247,7 @@ export const PROJECTS = {
       
     },
     {
-      id: 2,
+      id: 3,
       name: "POD Space Cloud",
       short_desc: "Private Cloud Storage",
       desc: "POD Space is an integral component of the Podium service, offering storage solutions for Podium users via both web portal and mobile application interfaces. It encompasses a wide range of functionalities akin to leading platforms such as Google Drive and Dropbox, facilitating file and folder sharing, document and media viewing, file copying, and supporting resumable uploads and downloads. Moreover, POD Space extends its storage services to other projects within the Podium ecosystem, employing common protocols such as FTP, S3, and HTTP-based upload/download APIs. However, due to the critical nature of the service and Iranian governmental regulations regarding user files, access to the service is unfortunately restricted from many countries.",
@@ -227,7 +272,7 @@ export const PROJECTS = {
       ]
     },
     {
-      id: 3,
+      id: 4,
       name: "Tapleader SDK",
       short_desc: "Application Campaign Tracking",
       desc: "Tapleader Analytics offered complimentary, unrestricted reporting for a daily quota of installations. It served as a robust in-app analytics solution, empowering users to track the efficacy of their app installation sources in real-time. This allowed for the assessment of each marketing channel's performance through a unified interface. However, the project was discontinued due to alterations in the Android platform.",
@@ -242,7 +287,7 @@ export const PROJECTS = {
       ]
     },
     {
-      id: 4,
+      id: 5,
       name: "WeClick Advertising",
       short_desc: "Intelligent Advertising System",
       desc: "Weclick addressed the prevalent issues in online advertising on Iranian websites. It aimed to revolutionize the advertising landscape by offering a more user-friendly experience through less intrusive ad formats like well-designed textual or banner ads. Additionally, it tackled the problem of incorrect pricing models by ensuring fairness to advertisers and optimizing ad performance. Weclick's intelligent system prioritized relevance, ensuring that users were presented with ads tailored to their interests. By focusing on balancing the needs of advertisers, ad display, and users, Weclick aimed to create a more efficient and satisfactory online advertising ecosystem for all parties involved. However, the project is discontinued.",

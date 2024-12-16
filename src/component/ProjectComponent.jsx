@@ -47,7 +47,7 @@ const ProjectActionMenuComponent = ({project, isVisible, isMobile, onClickAction
     return(
         <CardFooter className={`absolute bg-black/0 bottom-0 z-10 flex flex-row gap-2 h-[50px] transition-all 
             ${ isVisible ? "opacity-100" : "opacity-0"}`}>
-            {project.url != null ? 
+            {project.url != null && typeof foo !== 'undefined'?
                 <Button isIconOnly size="sm" variant="flat" aria-label="Go to Project Website" 
                     onClick={()=> window.open(`${project.url}?ref=${window.location.href}`, "_blank")}>
                     <FontAwesomeIcon icon={faLink}/>

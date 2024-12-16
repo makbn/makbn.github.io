@@ -5,7 +5,7 @@ import {Image, Chip} from "@nextui-org/react";
 import Skill from "../model/Skill";
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquareFull, faCircle } from "@fortawesome/free-solid-svg-icons";
+import {faCircle} from "@fortawesome/free-solid-svg-icons";
 
 const ExperienceComponent = ({experience}) => {
     ExperienceComponent.propTypes = {
@@ -22,26 +22,29 @@ const ExperienceComponent = ({experience}) => {
             </div>
             {/* main experience container */}
             <div className="flex flex-col grow">
-                <CompanyComponent company={experience.company}/>
+                <CompanyComponent company={experience.company} title={experience.title}/>
                 <SkillComponent skills={experience.getSkills()}/>
-                <PositionComponent positionTitle={experience.title}/>
                 <DescriptionConponent description={experience.getDescriptions()}/>
             </div>
         </div>
     )
 }
 
-const CompanyComponent = ({company}) => {
+const CompanyComponent = ({company, title}) => {
     CompanyComponent.propTypes = {
         company: PropTypes.instanceOf(Company).isRequired,
+        title: PropTypes.instanceOf(String).isRequired
     };
 
     return (
         <div className="flex flex-row ml-4 mt-2">
-            <Image width={38} height={38} alt={company.name} src={company.icon} className="hover:scale-75 mr-2"/>
+            <Image width={38} height={38} alt={company.name} src={company.icon} className="hover:scale-75 mr-2 rounded-none"/>
             <div  className="flex flex-col ml-4">
                 <div className="text-lg">{company.name}</div>
-                <div className="text-sm text-stone-600">{company.location}</div> 
+                <div className="flex flex-row">
+                    <div className="text-sm text-stone-600">{company.location}</div>
+                    <PositionComponent positionTitle={title}/>
+                </div>
             </div>
         </div>
     )
@@ -54,8 +57,8 @@ const SkillComponent = ({skills}) => {
     };
 
     return(
-        <div className="w-full flex flex-row gap-2 ml-4 mt-4 flex-wrap">
-            {skills.map((skill, idx) => <Chip key={`skill_${idx}`} variant="bordered" size="sm" className="text-stone-400">{skill.title}</Chip>)}
+        <div className="flex flex-row gap-2 ml-[54pt] mt-2 flex-wrap">
+            {skills.map((skill, idx) => <Chip key={`skill_${idx}`}  size="sm" className="text-stone-600 bg-stone-900">{skill.title}</Chip>)}
         </div>
     )
 }
@@ -66,9 +69,8 @@ const PositionComponent = ({positionTitle}) => {
     };
 
     return (
-        <div className="flex flex-row m-4 font-bold text-stone-400 uppercase">
-            <FontAwesomeIcon className="mr-2 mt-1" icon={faSquareFull}/>
-            <p>{positionTitle}</p>
+        <div className="flex flex-row text-sm ml-2 text-stone-600 uppercase">
+            <p>  | {positionTitle}</p>
         </div>
     )
 } 

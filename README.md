@@ -1,28 +1,25 @@
-# Matt's Awesome Portfolio Website
+# Matt's Portfolio Website
 
-Welcome to the repository of my personal website, where I showcase my skills, experience, and projects in an interactive and visually appealing way. Built with React, JavaScript, TailwindCSS, and NextUI, this website is a true testament to my passion for web development.
+Welcome to the repository of my personal website, where I list my skills, experience, and projects. Built with:
+- React
+- JavaScript
+- TailwindCSS
+- NextUI
 
 ![poster](https://raw.githubusercontent.com/makbn/makbn.github.io/master/docs/poster.png)
 
-Feel free to fork this repository and use the code as a starting point for your own personal website! You can customize the content, design, and features to fit your needs. I'd love to see what you create, so feel free to share your project with me.
+Feel free to fork this repository and use the code as a starting point for your own personal website! You can customize the content, design, and features to fit your needs.
 
 ## Features
 
-- 🎨 Modern and responsive design that adapts to different screen sizes
-- 📄 Detailed information about my professional journey, skillset, and projects
-- 🌐 Easy navigation with smooth scrolling and anchored sections
-- 🎉 Interactive animations and effects that bring the website to life
+- Tried to be responsive to different screen sizes
+- Has detailed section about my professional journey, skillset, and projects
+- Easy navigation with smooth scrolling and anchored sections
 
-## Technologies Used
-
-- 📚 React: The powerful JavaScript library for building user interfaces
-- 💻 JavaScript: The programming language that adds interactivity and functionality
-- 🎨 TailwindCSS: A utility-first CSS framework for rapid UI development
-- 💎 NextUI: A beautiful and customizable component library for React
 
 ## Getting Started
 
-You are very welcome to fork or clone and use this template. To run this project locally, follow these simple steps:
+To run this project locally, follow these simple steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/personal-website.git`
 2. Install dependencies: `npm install`

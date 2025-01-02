@@ -6,7 +6,6 @@ import { ScrollShadow } from "@nextui-org/react";
 import { INFO_SECTIONS, MOBILE_INFO_SECTIONS } from "../../../global";
 import WorkExperienceSection from "./WorkExperienceSection";
 import ProjectSection from "./ProjectSection";
-import ContactMeSection from "./ContactMeSection";
 import AcademicSection from "./AcademicSection";
 import TechnologiesSection from "./TechnologiesSection";
 import ContentSection from "./ContentSection";
@@ -140,15 +139,13 @@ export const Content = ({contentId, showDetailsPanel, isMobile}) => {
     2: <ProjectSection showDetailsPanel={showDetailsPanel} className="ml-4" isMobile={true} />,
     3: <TechnologiesSection isMobile={true} />,
     4: <AcademicSection className="flex flex-col gap-8" />,
-    5: <ContentSection content={ABOUT_ME} />,
-    6: <ContactMeSection isMobile={true} />,
+    5: <ContentSection content={ABOUT_ME} />
   } : {
     0: <WorkExperienceSection className="flex flex-col gap-8" isMobile={false} />,
     1: <ProjectSection showDetailsPanel={showDetailsPanel} className="ml-4" isMobile={false} />,
     2: <TechnologiesSection isMobile={false} />,
     3: <AcademicSection className="flex flex-col gap-8" />,
-    4: <ContentSection content={ABOUT_ME} />,
-    5: <ContactMeSection isMobile={false} />,
+    4: <ContentSection content={ABOUT_ME} />
   };
 
   return componentsMap[contentId] || "Hello World!";

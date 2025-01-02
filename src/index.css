@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --stone-color:rgb(168 162 158);
   --stone-color-800: rgb(41 37 36);

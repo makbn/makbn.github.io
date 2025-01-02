@@ -38,7 +38,7 @@ const DesktopHeroSection = () => {
                  <NameSection isMobile={false} setScrollTo={setScrollInfoTo}/> 
             </div>
             <div className="relative basis-2/3 self-stretch flex flex-row overflow-x-hidden" > 
-                <InfoSection className={`w-full duration-300 relative h-full my-8 ${infoSectionWidth}`} 
+                <InfoSection className={`w-full duration-300 relative h-full mb-8 ${infoSectionWidth}`} 
                 scrollTo={scrollInfoTo} 
                 setScrollTo={setScrollInfoTo} 
                 showDetailsPanel={showDetailsPanel}/> 

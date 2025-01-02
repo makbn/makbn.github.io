@@ -45,9 +45,7 @@ export const INFO_SECTIONS = [
   {id:0, title:"Work Experience / Professional Background"},
   {id:1, title:"Projects"},
   {id:2, title:"Technologies"},
-  {id:3, title:"Academic Background"},
-  {id:4, title:"About me / Summery"},
-  {id:5, title:"Contact me"}
+  {id:3, title:"Academic Background"}
 ];
 
 export const MOBILE_INFO_SECTIONS = [
@@ -55,15 +53,13 @@ export const MOBILE_INFO_SECTIONS = [
   {id:1, title:"Work Experience / Professional Background"},
   {id:2, title:"Projects"},
   {id:3, title:"Technologies"},
-  {id:4, title:"Academic Background"},
-  {id:5, title:"About me / Summery"},
-  {id:6, title:"Contact me"}
+  {id:4, title:"Academic Background"}
 ];
 
 export const EXPERIENCES = [
   new Experience("Software Developer",
       new Company("ICE", "Calgary, AB, Canada", "https://ice.com", "logos/ice.png"),
-      2024, "TDY", [
+      "'24", "TDY", [
         new Skill("Java", 10),
         new Skill("Hibernate", 8),
         new Skill("Oracle", 7),
@@ -77,7 +73,7 @@ export const EXPERIENCES = [
       ]),
   new Experience("Software Developer", 
     new Company("Aimsio", "Calgary, AB, Canada", "https://aimsio.com", "logos/aimsio.png"),
-    2022, 2024, [
+    "'22", "'24", [
         new Skill("Java", 10),
         new Skill("Vaadin", 8),
         new Skill("MySQL", 9),
@@ -91,7 +87,7 @@ export const EXPERIENCES = [
     ]),
   new Experience("Applied Data Scientist | Research Assistant",
     new Company("UAlberta Databases Lab.", "Edmonton, AB, Canada", "https://www.ualberta.ca/computing-science/research/research-labs.html", "logos/ualberta.png"),
-    2021, 2022, [
+    "'21", "'22", [
       new Skill("Python", 9),
       new Skill("MySQL", 9),
       new Skill("MongoDB", 8),
@@ -106,7 +102,7 @@ export const EXPERIENCES = [
 
   new Experience("Software Engineer", 
     new Company("Fanap Co.", "Iran", "https://fanap.ir/en", "logos/fanap.png"),
-    2018, 2020,[
+    "'18", "'20",[
       new Skill("Java", 10),
       new Skill("Spring", 9),
       new Skill("MySQL", 8),
@@ -121,7 +117,7 @@ export const EXPERIENCES = [
     ]),
   new Experience("Sofware Engineer", 
     new Company("WeClick", "Iran", null, "logos/weclick.png"),
-    2018, 2015,[
+    "'15", "'18",[
     new Skill("Java", 10),
     new Skill("Android", 9),
     new Skill("SQL", 8),
@@ -135,7 +131,7 @@ export const EXPERIENCES = [
 export const ACADEMIC = [
   new Experience("Master of Science - Computing Science",
   new Company("University of Alberta", "Edmonton, AB, Canada", "https://www.ualberta.ca", "logos/ualberta.png"),
-  "Jan. 2021", "Dec. 2022", [
+  "Jan. '21", "Dec. '22", [
     new Skill("Relational Database", 10),
     new Skill("Entity Matching", 9),
     new Skill("Open Entity Resolution", 8),
@@ -150,7 +146,7 @@ export const ACADEMIC = [
   ]),
   new Experience("Bachelor of Engineering - Software Engineering",
   new Company("Ferdowsi University of Mashhad", "Mashhad, Iran", "https://en.um.ac.ir/", "logos/fum.png"),
-  "Sep. 2014", "Aug. 2019", [
+  "Sep. '14", "Aug. '19", [
     new Skill("Software Architecture", 10),
     new Skill("Advanced Programming", 10),
     new Skill("AI", 7),

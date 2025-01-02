@@ -33,11 +33,11 @@ export const NameSection = ({isMobile, setScrollTo, className=""}) => {
                 />
                 </div>
                 
-                <p className={`ease-out ${isMobile ? "text-7xl" : "text-8xl" } grow text-stone-400`}> {PROPERTIES.last_name},</p>
+                <p className={`ease-out ${isMobile ? "text-6xl" : "text-7xl" } grow text-stone-400`}> {PROPERTIES.last_name},</p>
             </div>
             {isMobile ? <div className="grow"/> : null}
             <div id="slogan_section" className="ease-out relative lg:mt-8 md:mt-8 sm:mt-0 border-l-4 border-stone-400 pl-2 font-bold
-                lg:font-light lg:text-4xl/[3.2rem]">
+                lg:font-light lg:text-3xl/[3.2rem]">
                 <p> 
                     A 
                     <br></br> 
@@ -47,9 +47,7 @@ export const NameSection = ({isMobile, setScrollTo, className=""}) => {
                     <br></br> 
                     Java <FontAwesomeIcon icon={faJava}/> web development frameworks 
                     <br></br> 
-                    With 
-                    <br></br> 
-                    + {CommonUtil.numberToText(new Date().getFullYear() - PROPERTIES.occupation_start_year)} years of experience; 
+                    With + {CommonUtil.numberToText(new Date().getFullYear() - PROPERTIES.occupation_start_year)} years of experience; 
                     {isMobile ? <br></br> :
                     <Link className="cursor-pointer ml-6 font-thin" color="foreground" onPress={() => setScrollTo(4)}> 
                         <>READ MORE <FontAwesomeIcon className="pl-2 pt-1"icon={faLongArrowRight}/></>

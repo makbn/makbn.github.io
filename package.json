@@ -10,7 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@nextui-org/react": "^2.2.9",
     "@tailwindcss/typography": "^0.5.16",
-    "axios": "^1.8.4",
+    "axios": "^1.12.0",
     "font-awesome": "^4.7.0",
     "framer-motion": "^11.0.3",
     "react": "^18.2.0",

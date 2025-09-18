@@ -13,14 +13,14 @@ import Skill from "./model/Skill";
 import { faAndroid } from "@fortawesome/free-brands-svg-icons";
 
 export const PROPERTIES = {
-    first_name: "Mehdi",
+    first_name: "Matt",
     last_name: "Akbarian",
     nick_name: "Matt A.",
     location: "Calgary, AB, Canada",
     location_abbrv : "YYC",
     occupation: "Software Engineer",
     occupation_abbrv: "SDE",
-    occupation_start_year: 2016,
+    occupation_start_year: 2015,
     url_avatar: "/makbn.svg",
     url_twitter: "https://x.com/matt_rastaghi?s=21",
     url_github: "https://github.com/makbn",
@@ -66,10 +66,10 @@ export const EXPERIENCES = [
         new Skill("RabbitMQ", 9),
         new Skill("REST API", 10),
         new Skill("Web Developent", 10),
-        new Skill("Mybatis", 7)
+        new Skill("Javascript", 7)
       ], [
-        "Working as a software engineer developing and maintaining ICE natural gas exchange (NGX) platforms",
-        "Upgrading the existing projects using common patterns and the latest LTS frameworks and libraries",
+        "Focused on development and modernization of financial trading infrastructure processing $50B+ yearly volume across North American energy markets.",
+        "Upgrading and mainting NGX clearing and trading platforms, power and natural gas data broker and differnt services.",
       ]),
   new Experience("Software Developer", 
     new Company("Aimsio", "Calgary, AB, Canada", "https://aimsio.com", "logos/aimsio.png"),
@@ -350,16 +350,16 @@ export const PROJECTS = {
 export const TECHNOLOGIES = [
   {
     title: "Programming",
-    list: ["Java SE", "Java EE", "JavaScript", "Python", "Kotlin", "SQL", "HTLM"]
+    list: ["Java", "Python", "JavaScript", "SQL"]
   }, {
     title: "Tools and Frameworks",
-    list: ["Spring Boot", "Spring Framework", "Hibernate ORM", "Vaadin", "React", "Maven", "JUnit", "Mockito", "Sentry", "Datadog", "NextUI", "Tailwind CSS"]
+    list: ["Spring Boot", "Spring Framework", "Hibernate ORM", "Vaadin", "Git", "React", "JUnit", "Mockito", "ReactUI", "NestJS", "ActiveMQ"]
   },{
     title: "Databases",
     list: ["MySQL", "MariaDB", "MongoDB", "PostgreSQL", "Redis"]
   }, {
     title: "Cloud and DevOps",
-    list: ["CI/CD", "Docker", "Google Cloud Platform", "Jenkins", "Apache Mesos", "Apache Marathon", "CircleCI", "GitHub Actions", "Bitbucket"]
+    list: ["CI/CD", "Docker", "Jenkins", "CircleCI", "GitHub Actions", "Ansible", "Snyk", "Sentry", "Datadog"]
   }, {
     title: "Architectures",
     list: ["MVC", "MVP", "Microservices", "Serverless", "Event-Driven", "REST"]

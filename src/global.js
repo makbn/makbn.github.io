@@ -57,7 +57,7 @@ export const MOBILE_INFO_SECTIONS = [
 ];
 
 export const EXPERIENCES = [
-  new Experience("Software Developer",
+  new Experience("Senior Software Engineer",
       new Company("ICE", "Calgary, AB, Canada", "https://ice.com", "logos/ice.png"),
       "'24", "TDY", [
         new Skill("Java", 10),
@@ -299,8 +299,17 @@ export const PROJECTS = {
     }
   ],
   personal : [
-      {
+          {
         id: 5,
+        name: "MCP Mediator",
+        short_desc: "Automatic MCP Server Generation",
+        desc: "A Java-based implementation of a Model Context Protocol (MCP) mediator that automatically generates an MCP Server from existing source code, service classes, helper methods, and external MCP tools. The MCP Mediator aggregates these diverse components into a unified MCP Server, streamlining communication between MCP clients and servers through a single point. By eliminating the need to manually maintain multiple MCP Servers, this tool simplifies integration and execution within the MCP ecosystem and make it possible to generate MCP Servers without altering the existing code bases and tools that are planned to be MCP compatible.",
+        url: "https://makbn.com/mcp_mediator/",
+        repo: "https://github.com/makbn/mcp_mediator",
+        extra: []
+      },
+      {
+        id: 6,
         name: "JThumbnailer",
         short_desc: "Thumbnail Generator",
         desc: "JThumbnail is a project dedicated to simplifying the process of generating thumbnails from documents and video files in Java. It aims to provide a straightforward solution for developers. Leveraging the power of FFmpeg, a widely recognized multimedia framework, JThumbnail offers a user-friendly approach to thumbnail generation for Java applications. With support for various video formats and documents files and configurable options, JThumbnail strives to assist users in creating quality thumbnails with ease.",
@@ -309,7 +318,7 @@ export const PROJECTS = {
         extra: []
       },
       {
-        id: 6,
+        id: 7,
         name: "Java Leaflet",
         short_desc: "Java wrapper for Leaflet Map",
         desc: "Java Leaflet is a project designed to provide Java developers with an accessible way to incorporate interactive maps into their applications. By leveraging Leaflet.js, it offers a straightforward solution for displaying maps with ease. Whether you're working on a Java web app, Java mobile application, or Java desktop software, Java Leaflet simplifies the process of integrating dynamic map functionality. It aims to be a helpful tool for developers seeking to enhance their projects with map visualizations.",
@@ -318,7 +327,7 @@ export const PROJECTS = {
         extra:[]
       },
       {
-        id: 7,
+        id: 8,
         name: "Personal Webpage",
         short_desc: "Personal webpage with React",
         desc: "This website that you are currently exploring is part of my attempt to learn React and modern front-end developent. I developed this simple project to learn basics of React and use some of the common state-of-the-art libraries and framework in front-end developent.",
@@ -327,7 +336,7 @@ export const PROJECTS = {
         extra:[]
       },
       {
-        id: 8,
+        id: 9,
         name: "ROBEM",
         short_desc: "PLMs for Entity Matching",
         desc: "The paradigm of fine-tuning Pre-trained Language Models (PLMs) has been successful in Entity Matching (EM). Despite their remarkable performance, PLMs exhibit tendency to learn spurious correlations from training data. In this work, we aim at investigating whether PLM-based entity matching models can be trusted in real-world applications where data distribution is different from that of training. To this end, we design an application to assess the robustness of EM models to facilitate their deployment in the real-world settings.",
@@ -336,7 +345,7 @@ export const PROJECTS = {
         extra:[]
       },
       {
-        id: 9,
+        id: 10,
         name: "Finding Trudeau",
         short_desc: "Crawling CNN and Twitter",
         desc: "Finding Trudeau (FT) is a simple application for crawling CNN and Twitter looking for any news and tweets about Justin Trudeau. Plus, you can generate word cloud from the most important topics and keywords from Mr. Trudeau's tweets!",
@@ -368,7 +377,7 @@ export const TECHNOLOGIES = [
 
 export const ABOUT_ME = [
   {
-    "header": "I am Matt, a proud alumnus of the University of Alberta and a software developer at Aimsio.",
+    "header": "I am Matt, a proud alumnus of the University of Alberta and a senior software engineer at ICE.",
   },
   {
     "header" : "Experienced Software Engineer...",

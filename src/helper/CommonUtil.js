@@ -1,52 +1,65 @@
-
 export class CommonUtil {
 
-    static numberToText(number) {
-        const digits = ['', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE'];
-        const tens = ['', 'TEN', 'TWENTY', 'THIRTY', 'FORTY', 'FIFTY', 'SIXTY', 'SEVENTY', 'EIGHTY', 'NINETY'];
-        const specialNumbers = ['', 'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN', 'FOURTEEN', 'FIFTEEN', 'SIXTEEN', 'SEVENTEEN', 'EIGHTEEN', 'NINETEEN'];
+    static numberToText(n) {
+        if (n < 0)
+            return "";
     
-        if (number === 0) {
-            return 'ZERO';
+        if (n === 0)
+            return "ZERO";
+    
+        const first = [
+            "",
+            "ONE",
+            "TWO",
+            "THREE",
+            "FOUR",
+            "FIVE",
+            "SIX",
+            "SEVEN",
+            "EIGHT",
+            "NINE",
+            "TEN",
+            "ELEVEN",
+            "TWELVE",
+            "THIRTEEN",
+            "FOURTEEN",
+            "FIFTEEN",
+            "SIXTEEN",
+            "SEVENTEEN",
+            "EIGHTEEN",
+            "NINETEEN",
+        ];
+    
+        const tens = [
+            "",
+            "",
+            "TWENTY",
+            "THIRTY",
+            "FORTY",
+            "FIFTY",
+            "SIXTY",
+            "SEVENTY",
+            "EIGHTY",
+            "NINETY",
+        ];
+    
+        if (n < 20) {
+            return first[n];
         }
     
-        if (number < 10) {
-            return digits[number];
+        if (n < 100) {
+            return (tens[Math.floor(n / 10)] + (n % 10 !== 0 ? " " + first[n % 10] : "")).trim();
         }
     
-        if (number >= 10 && number < 20) {
-            return specialNumbers[number];
+        if (n < 1000) {
+            return (first[Math.floor(n / 100)] + " HUNDRED" + (n % 100 !== 0 ? " " + CommonUtil.numberToText(n % 100) : "")).trim();
         }
-    
-        if (number >= 20 && number < 100) {
-            const ten = Math.floor(number / 10);
-            const digit = number % 10;
-            return tens[ten] + ' ' + digits[digit];
+        
+        if (n < 100000) {
+            return (CommonUtil.numberToText(Math.floor(n / 1000)) + " THOUSAND" + (n % 1000 !== 0 ? " " + CommonUtil.numberToText(n % 1000) : "")).trim();
         }
-    
-        let text = '';
-        let num = number;
-    
-        while (num > 0) {
-            const hundred = Math.floor(num / 100);
-            if (hundred > 0) {
-                text = digits[hundred] + ' HUNDRED ' + text;
-            }
-    
-            const ten = Math.floor((num % 100) / 10);
-            if (ten > 1) {
-                text += tens[ten] + ' ';
-            }
-    
-            const digit = num % 10;
-            if (num >= 20 || num % 100 < 10) {
-                text += digits[digit];
-            }
-    
-            num = Math.floor(num / 10);
-        }
-    
-        return text.trim();
+        
+        return "";
     }
     
 }
